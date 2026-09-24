@@ -13,7 +13,8 @@ export function clipFor(snapshot) {
     return { clip: true, kind: "boundary" };
   }
   if (event.display === "NOT_OUT") {
-    return { clip: false, kind: "appeal" };
+    // Same replay package as a wicket — editors search kind=wicket.
+    return { clip: true, kind: "wicket" };
   }
   return { clip: false, kind: "none" };
 }
