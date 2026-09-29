@@ -36,7 +36,7 @@ test("counted wicket is a highlight", () => {
   );
 });
 
-test("unconfirmed appeal is not a clip", () => {
+test("unconfirmed appeal is filed as a wicket clip", () => {
   assert.deepEqual(
     clipFor(
       snapshot({
@@ -48,7 +48,7 @@ test("unconfirmed appeal is not a clip", () => {
         },
       })
     ),
-    { clip: false, kind: "appeal" }
+    { clip: true, kind: "wicket" }
   );
 });
 
