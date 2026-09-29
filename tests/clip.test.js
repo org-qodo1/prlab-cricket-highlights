@@ -52,7 +52,7 @@ test("unconfirmed appeal is not a clip", () => {
   );
 });
 
-test("four is a boundary clip", () => {
+test("four is a four clip", () => {
   assert.deepEqual(
     clipFor(
       snapshot({
@@ -64,6 +64,22 @@ test("four is a boundary clip", () => {
         },
       })
     ),
-    { clip: true, kind: "boundary" }
+    { clip: true, kind: "four" }
+  );
+});
+
+test("six is a six clip", () => {
+  assert.deepEqual(
+    clipFor(
+      snapshot({
+        last_event: {
+          display: "SIX",
+          runs_added: 6,
+          wicket_counted: false,
+          legal_delivery: true,
+        },
+      })
+    ),
+    { clip: true, kind: "six" }
   );
 });
